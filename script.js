@@ -22,7 +22,7 @@ document.addEventListener('keydown', (event) => {
 const scenes = {
   document: { image: 'assets/search-document.jpg', alt: '真实文档搜索结果：去欧洲要备哪些材料。' },
   image: { image: 'assets/search-image.jpg', alt: '真实图片搜索结果：歪着的那座白塔，结果中包含比萨斜塔照片。' },
-  video: { image: 'assets/search-video.jpg', alt: '真实视频搜索结果：航拍公路穿过成排茶田，结果提供 00:04 时间位置。' }
+  video: { image: 'assets/search-video.png', alt: '真实视频搜索结果：白裙姑娘走在花房，提供 00:00 命中位置；资料路径已遮挡。' }
 };
 const tabs = [...document.querySelectorAll('[role="tab"]')];
 const sceneImage = document.querySelector('#search-scene');

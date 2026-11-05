@@ -6,3 +6,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
 .search-visual>img[src$="search-document.jpg"],.search-visual>img[src$="search-image.jpg"]{width:auto;height:auto;max-width:100%;aspect-ratio:auto;border-radius:15px}
+
+.search-visual>img[src$="search-video.png"]{width:auto;height:auto;max-width:100%;aspect-ratio:auto;border-radius:15px}
