@@ -53,28 +53,16 @@ tabs.forEach((tab, index) => {
   });
 });
 
-const dialog = document.querySelector('#video-dialog');
-const video = dialog.querySelector('video');
-let videoTrigger;
-document.querySelectorAll('[data-video]').forEach((button) => {
-  button.addEventListener('click', () => {
-    videoTrigger = button;
-    document.querySelector('#video-title').textContent = button.dataset.title;
-    video.poster = button.dataset.poster;
-    video.src = button.dataset.video;
-    dialog.showModal();
+const heroVideo = document.querySelector('#hero-demo');
+const heroPlay = document.querySelector('#hero-play');
+function playHeroDemo() {
+  heroVideo.play().catch(() => {
+    heroPlay.hidden = false;
   });
+}
+heroVideo.muted = true;
+heroVideo.addEventListener('playing', () => {
+  heroPlay.hidden = true;
 });
-dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', (event) => {
-  if (event.target === dialog) {
-    const bounds = dialog.getBoundingClientRect();
-    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
-  }
-});
-dialog.addEventListener('close', () => {
-  video.pause();
-  video.removeAttribute('src');
-  video.load();
-  videoTrigger?.focus();
-});
+heroPlay.addEventListener('click', playHeroDemo);
+playHeroDemo();
